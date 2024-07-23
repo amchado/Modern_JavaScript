@@ -1,9 +1,10 @@
-let isIsland = false;
-let language;
+let country = "Brasil"
+let continent = "South America"
+let population = 200000000;
 
-console.log(typeof isIsland);
-console.log(typeof population);
-console.log(typeof country);
-console.log(typeof language);
+console.log(country)
+console.log(continent)
+console.log(population)
+
 
 
