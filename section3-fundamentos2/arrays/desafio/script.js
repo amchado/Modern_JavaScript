@@ -102,12 +102,23 @@ Registre no console se o array tem 4 elementos ou não (verdadeiro ou falso).
 
 Crie uma matriz chamada percentagens contendo as percentagens da população mundial para estes 4 valores populacionais. Use a função percentageOfWorld1 que você criou anteriormente para calcular os 4 valores percentuais. */
 
-const populacao = [0.215, 1.447, 1.441, 0.587]
-console.log(populacao.length === 4)
+// const populacao = [0.215, 1.447, 1.441, 0.587]
+// console.log(populacao.length === 4)
 
-const Fporcentagem = function(pais){
-        return (pais / 7.900) * 100}
+// const Fporcentagem = function(pais){
+//         return (pais / 7.900) * 100}
 
-const porcentagem = [Fporcentagem(populacao[0]), Fporcentagem(populacao[1]),Fporcentagem(populacao[2]),Fporcentagem(populacao[3])]
+// const porcentagem = [Fporcentagem(populacao[0]), Fporcentagem(populacao[1]),Fporcentagem(populacao[2]),Fporcentagem(populacao[3])]
 
-console.log(porcentagem)
+// console.log(porcentagem)
+
+//Desafio 8 
+// const eu = {
+//         primeiroNome: 'Arthur',
+//         sobrenome: 'Machado',
+//         idade: 2024 - 2002, 
+//         profissao: 'web developer',
+//         amigos:['Levy', 'Lipe', 'Lucas']
+//     }
+    
+//     console.log(eu)

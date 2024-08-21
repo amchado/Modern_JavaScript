@@ -97,8 +97,21 @@ Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
 //Aula 6
 //Arrays
 
-const friends = ['Levy', 'Lipe', 'Lucas']
+// const friends = ['Levy', 'Lipe', 'Lucas']
 
-const anos = new Array(2002, 2004, 2000)
+// const anos = new Array(2002, 2004, 2000)
 
-console.log(friends, anos )
+// console.log(friends, anos )
+
+//Aula 8 
+//Objetos
+
+const eu = {
+    primeiroNome: 'Arthur',
+    sobrenome: 'Machado',
+    idade: 2024 - 2002, 
+    profissao: 'web developer',
+    amigos:['Levy', 'Lipe', 'Lucas']
+}
+
+console.log(eu)
