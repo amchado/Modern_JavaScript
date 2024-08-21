@@ -152,18 +152,71 @@ Chame o método de descrição.
 
 Adicione um método chamado checkIsland ao objeto myCountry. Este método definirá uma nova propriedade no objeto, chamada isIsland. isIsland será verdadeiro se não houver países vizinhos e falso se houver. Use o operador ternário para definir a propriedade. */
 
- const brasil = {
+//  const brasil = {
      
-    pais:'Brasil',
-    populacao: 224,
-    idioma:'Portugues',
-    capital:'Brasilia',
-    ilha: false,
-    paisesVizinhos: ['Colombia', 'Argentina', 'Uruguai', 'Venezuela', 'Peru', 'Bolivia'],
+//     pais:'Brasil',
+//     populacao: 224,
+//     idioma:'Portugues',
+//     capital:'Brasilia',
+//     ilha: false,
+//     paisesVizinhos: ['Colombia', 'Argentina', 'Uruguai', 'Venezuela', 'Peru', 'Bolivia'],
 
-    descricao: function(){
-        return `O(A) ${this.pais} tem ${this.populacao} milhões de pessoas que falam ${this.idioma} e ${this.ilha ? `não possui paises vizinhos` : `possui ${this.paisesVizinhos.length} países vizinhos`} `
+//     descricao: function(){
+//         return `O(A) ${this.pais} tem ${this.populacao} milhões de pessoas que falam ${this.idioma} e ${this.ilha ? `não possui paises vizinhos` : `possui ${this.paisesVizinhos.length} países vizinhos`} `
+//     }
+//  }
+
+//  console.log(brasil.descricao())
+
+
+
+//Desafio 11
+/* Voltemos a Mark e John comparando seus IMCs!
+
+Desta vez, vamos usar objetos para implementar os cálculos! Lembre-se: IMC = massa / (altura * altura) (massa em kg e altura em metros).
+
+Suas tarefas:
+
+Para cada um deles, crie um objeto com propriedades de nome completo, massa e altura (Mark Miller e John Smith). Nomeie esses objetos como mark e john, e suas propriedades exatamente como fullName, mass e height.
+
+Crie um método calcBMI em cada objeto para calcular o IMC (o mesmo método em ambos os objetos). Atribua o valor do IMC a uma propriedade chamada bmi (minúsculas) e também retorne-o do método.
+
+Registe na consola quem tem o IMC mais elevado, juntamente com o nome completo e o respetivo IMC. Exemplo: 'O IMC de John Smith (28,3) é maior que o de Mark Miller (23,9)!'.
+
+DADOS DO TESTE: Marks pesa 78 kg e tem 1,69 m de altura. John pesa 92 kg e tem 1,95 m de altura.
+*/
+
+
+const mark = {
+    fullname: 'Mark miller',
+    mass:78 ,
+    height:1.69 ,
+
+    calcBMI: function(){
+        this.bmi = this.mass / this.height ** 2
+        return this.bmi
     }
- }
+}
 
- console.log(brasil.descricao())
+const john = {
+    fullname: 'Jhon Smith',
+    mass: 92,
+    height:1.95,
+
+    calcBMI: function(){
+        this.bmi = this.mass / this.height ** 2
+        return this.bmi
+    }
+
+
+}
+
+mark.calcBMI()
+john.calcBMI()
+console.log(mark.bmi, john.bmi)
+
+if(mark.bmi > john.bmi){
+    console.log(`O IMC de ${mark.fullname} (${mark.bmi}) é maior que o de ${john.fullname} ${john.bmi}`)
+}else{
+    `O IMC de ${john.fullname} (${john.bmi}) é maior que o de ${mark.fullname} ${mark.bmi}`
+}
