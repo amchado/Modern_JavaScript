@@ -108,10 +108,24 @@ Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
 
 const eu = {
     primeiroNome: 'Arthur',
-    sobrenome: 'Machado',
+    sobreNome: 'Machado',
     idade: 2024 - 2002, 
     profissao: 'web developer',
     amigos:['Levy', 'Lipe', 'Lucas']
 }
 
 console.log(eu)
+console.log(eu.primeiroNome)
+console.log(eu.sobreNome)
+
+
+const keyname = 'Nome'
+console.log(eu['primeiro' + keyname])
+console.log(eu['sobre' + keyname])
+
+// const sobre = prompt('Sobre o que voce quer saber? escolha entre, primeiroNome, sobreNome, idade, prosissao e amigos')
+// console.log(sobre)
+// console.log(eu[sobre])
+
+console.log(`${eu.primeiroNome} tenho ${eu.amigos.length} amigos, mas o ${eu.amigos[0]} é o meu melhor amigo`)
+

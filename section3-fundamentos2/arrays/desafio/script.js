@@ -122,3 +122,24 @@ Crie uma matriz chamada percentagens contendo as percentagens da população mun
 //     }
     
 //     console.log(eu)
+
+//Desafio 9 
+/* Usando o objeto da tarefa anterior, registre uma string como esta no console: 'A Finlândia tem 6 milhões de pessoas que falam finlandês, 3 países vizinhos e uma capital chamada Helsinque'.
+
+Aumentar a população do país em dois milhões usando a notação de pontos e depois diminuí-la em dois milhões usando a notação de colchetes. */
+
+const brasil = {
+    pais:'Brasil',
+    populacao: 224,
+    idioma:'Portugues',
+    capital:'Brasilia',
+    paisesVizinhos: ['Colombia', 'Argentina', 'Uruguai', 'Venezuela', 'Peru', 'Bolivia']
+}
+
+console.log(`O ${brasil.pais} tem ${brasil.populacao} milhões de pessoas que falam ${brasil.idioma}, ${brasil.paisesVizinhos.length} paises vizinhos e sua capital é chamada de ${brasil.capital}`)
+
+brasil.populacao += 2;
+console.log(brasil.populacao)
+
+brasil.populacao -= 2;
+console.log(brasil.populacao)
