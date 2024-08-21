@@ -106,26 +106,73 @@ Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
 //Aula 8 
 //Objetos
 
-const eu = {
-    primeiroNome: 'Arthur',
-    sobreNome: 'Machado',
-    idade: 2024 - 2002, 
-    profissao: 'web developer',
-    amigos:['Levy', 'Lipe', 'Lucas']
-}
+// const eu = {
+//     primeiroNome: 'Arthur',
+//     sobreNome: 'Machado',
+//     idade: 2024 - 2002, 
+//     profissao: 'web developer',
+//     amigos:['Levy', 'Lipe', 'Lucas']
+// }
 
-console.log(eu)
-console.log(eu.primeiroNome)
-console.log(eu.sobreNome)
+// console.log(eu)
+// console.log(eu.primeiroNome)
+// console.log(eu.sobreNome)
 
 
-const keyname = 'Nome'
-console.log(eu['primeiro' + keyname])
-console.log(eu['sobre' + keyname])
+// const keyname = 'Nome'
+// console.log(eu['primeiro' + keyname])
+// console.log(eu['sobre' + keyname])
 
 // const sobre = prompt('Sobre o que voce quer saber? escolha entre, primeiroNome, sobreNome, idade, prosissao e amigos')
 // console.log(sobre)
 // console.log(eu[sobre])
 
-console.log(`${eu.primeiroNome} tenho ${eu.amigos.length} amigos, mas o ${eu.amigos[0]} é o meu melhor amigo`)
+// console.log(`${eu.primeiroNome} tenho ${eu.amigos.length} amigos, mas o ${eu.amigos[0]} é o meu melhor amigo`)
+
+//Aula 10 
+
+// const eu = {
+//     primeiroNome: 'Arthur',
+//     sobreNome: 'Machado',
+//     anoDeNascimento: 2002,
+//     carteiraDeMotorista: true, 
+//     profissao: 'web developer',
+//     amigos:['Levy', 'Lipe', 'Lucas'],
+//     calcage: function(){
+//         this.idade = 2024 - this.anoDeNascimento;
+//         return this.idade
+//     }
+ 
+// }
+
+// console.log(eu.calcage())
+// console.log(eu.idade)
+
+// challenger
+
+const eu = {
+    primeiroNome: 'Arthur',
+    sobreNome: 'Machado',
+    anoDeNascimento: 2002,
+    carteiraDeMotorista: true, 
+    profissao: 'web developer',
+    amigos:['Levy', 'Lipe', 'Lucas'],
+    calcage: function(){
+        this.idade = 2024 - this.anoDeNascimento;
+        return this.idade
+         },
+
+    getSummary:function(){
+        return `${this.primeiroNome} tem ${this.calcage()} anos e é ${this.profissao}, e ${(this.carteiraDeMotorista === true)? `possui carteira de motorista` : `não possui carteira de motorista` } e tem ${this.amigos.length} amigos`
+    }     
+}
+
+console.log(eu.calcage())
+console.log(eu.idade)
+
+console.log(eu.getSummary())
+
+
+
+
 

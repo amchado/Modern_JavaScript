@@ -128,18 +128,42 @@ Crie uma matriz chamada percentagens contendo as percentagens da população mun
 
 Aumentar a população do país em dois milhões usando a notação de pontos e depois diminuí-la em dois milhões usando a notação de colchetes. */
 
-const brasil = {
+// const brasil = {
+//     pais:'Brasil',
+//     populacao: 224,
+//     idioma:'Portugues',
+//     capital:'Brasilia',
+//     paisesVizinhos: ['Colombia', 'Argentina', 'Uruguai', 'Venezuela', 'Peru', 'Bolivia']
+// }
+
+// console.log(`O ${brasil.pais} tem ${brasil.populacao} milhões de pessoas que falam ${brasil.idioma}, ${brasil.paisesVizinhos.length} paises vizinhos e sua capital é chamada de ${brasil.capital}`)
+
+// brasil.populacao += 2;
+// console.log(brasil.populacao)
+
+// brasil.populacao -= 2;
+// console.log(brasil.populacao)
+
+//Desafio 10 
+
+/* Adicione um método chamado description ao objeto myCountry. Este método registrará uma string no console, semelhante à string registrada na tarefa anterior, mas desta vez usando a palavra-chave 'this'.
+
+Chame o método de descrição.
+
+Adicione um método chamado checkIsland ao objeto myCountry. Este método definirá uma nova propriedade no objeto, chamada isIsland. isIsland será verdadeiro se não houver países vizinhos e falso se houver. Use o operador ternário para definir a propriedade. */
+
+ const brasil = {
+     
     pais:'Brasil',
     populacao: 224,
     idioma:'Portugues',
     capital:'Brasilia',
-    paisesVizinhos: ['Colombia', 'Argentina', 'Uruguai', 'Venezuela', 'Peru', 'Bolivia']
-}
+    ilha: false,
+    paisesVizinhos: ['Colombia', 'Argentina', 'Uruguai', 'Venezuela', 'Peru', 'Bolivia'],
 
-console.log(`O ${brasil.pais} tem ${brasil.populacao} milhões de pessoas que falam ${brasil.idioma}, ${brasil.paisesVizinhos.length} paises vizinhos e sua capital é chamada de ${brasil.capital}`)
+    descricao: function(){
+        return `O(A) ${this.pais} tem ${this.populacao} milhões de pessoas que falam ${this.idioma} e ${this.ilha ? `não possui paises vizinhos` : `possui ${this.paisesVizinhos.length} países vizinhos`} `
+    }
+ }
 
-brasil.populacao += 2;
-console.log(brasil.populacao)
-
-brasil.populacao -= 2;
-console.log(brasil.populacao)
+ console.log(brasil.descricao())
