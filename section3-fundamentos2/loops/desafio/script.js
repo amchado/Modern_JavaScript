@@ -270,25 +270,44 @@ Registre apenas os países vizinhos no console, um por um, e não os arrays inte
 
 Você precisará de um loop dentro de outro loop para isso. Na verdade, isso é um pouco complicado, então não se preocupe se for muito difícil para você! Mas você ainda pode tentar descobrir isso de qualquer maneira 😉 */
 
-const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']]
+// const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']]
 
 
 
-for( let i = 0 ; i <= listOfNeighbours.length - 1; i++ ){
-    for(let y = 0; y < listOfNeighbours[i].length; y++){
-        console.log(`Neighbour : ${listOfNeighbours[i][y]}`)
-    }
+// for( let i = 0 ; i <= listOfNeighbours.length - 1; i++ ){
+//     for(let y = 0; y < listOfNeighbours[i].length; y++){
+//         console.log(`Neighbour : ${listOfNeighbours[i][y]}`)
+//     }
+// }
+
+
+
+// for(i = 0 ; i < listOfNeighbours.length; i++){
+//     for(y = 0; y < listOfNeighbours[i].length; y++ ){
+//         console.log(`Neighbor: ${listOfNeighbours[i][y]}`)
+//     }
+// }
+
+
+
+
+//          Desafio 15
+/* Recrie o desafio da palestra Looping Arrays, Breaking and Continuing, mas desta vez usando um loop while (chame o array percents3).
+
+Reflita sobre qual solução você mais gosta para esta tarefa: o loop for ou o loop while? */
+
+const populacao = [0.215, 1.447, 1.441, 0.587]
+
+const Fporcentagem = function(pais){         return (pais / 7.900) * 100}
+
+const porcentagem3 = []
+let i = 0
+
+while(i <= populacao.length -1 ){
+    const porc = Fporcentagem(populacao[i])
+    porcentagem3.push(porc)
+    i++
+    
 }
 
-
-
-
-
-
-
-
-for(i = 0 ; i < listOfNeighbours.length; i++){
-    for(y = 0; y < listOfNeighbours[i].length; y++ ){
-        console.log(`Neighbor: ${listOfNeighbours[i][y]}`)
-    }
-}
+console.log(porcentagem3)

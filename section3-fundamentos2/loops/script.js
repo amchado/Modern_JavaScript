@@ -235,26 +235,47 @@ Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
 //Aula 14
 // Looping backwards and loops in loops
 
-const arthur = [
-    'Arthur',
-    'Lucas',
-    22,
-    ['Levy', 'Lipe', 'Lucas'],
-    'Casado',
-    true,
-    'Tricolor'
-]
+// const arthur = [
+//     'Arthur',
+//     'Lucas',
+//     22,
+//     ['Levy', 'Lipe', 'Lucas'],
+//     'Casado',
+//     true,
+//     'Tricolor'
+// ]
 
-for(let i = arthur.length - 1; i >= 0 ; i--){
-    console.log(i, arthur[i])
-}
+// for(let i = arthur.length - 1; i >= 0 ; i--){
+//     console.log(i, arthur[i])
+// }
 
-for(let exercicio = 1; exercicio < 4; exercicio++){
-    console.log(`----- Começando o exercicio ${exercicio}`)
+// for(let exercicio = 1; exercicio < 4; exercicio++){
+//     console.log(`----- Começando o exercicio ${exercicio}`)
 
-    for(let rep = 1; rep < 6; rep++){
-        console.log(`começando a repetição ${rep} 🏋️‍♂️`)
+//     for(let rep = 1; rep < 6; rep++){
+//         console.log(`começando a repetição ${rep} 🏋️‍♂️`)
+//     }
+// }
+
+
+
+
+//Aula 15
+// The while loop
+
+// let rep = 1
+
+// while(rep <= 10){
+//     console.log(`executando o exercicio ${rep}`)
+//     rep++
+// }
+
+let dado = Math.trunc(Math.random() * 6) + 1 ;
+
+while(dado !== 6){
+    console.log(`voce rolou ${dado}`)
+    dado = Math.trunc(Math.random() * 6) + 1 ;
+    if(dado === 6){
+        console.log(`o Loop foi finalizado`)
     }
 }
-
-
