@@ -173,14 +173,60 @@ Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
 // console.log(eu.getSummary())
 
 
+//              LOOPS
 
 //Aula 11
-//Loops
 
-for(let rep = 1; rep <= 10; rep++){
-    console.log(`Você fez ${rep} repetições`)
+
+// for(let rep = 1; rep <= 10; rep++){
+//     console.log(`Você fez ${rep} repetições`)
+// }
+
+
+
+
+//Aula 12
+
+const arthur = [
+    'Arthur',
+    'Lucas',
+    22,
+    ['Levy', 'Lipe', 'Lucas'],
+    'Casado',
+    true,
+    'Tricolor'
+]
+
+const tipos = []
+
+for(let i = 0; i < arthur.length ; i++){
+    console.log(arthur[i], typeof arthur[i])
+
+
+    //preenchendo um array vazio
+    tipos[i] = typeof arthur[i]
 }
 
+console.log(tipos)
+
+
+
+const anos =[2002, 2008, 1980, 1965]
+const idade = []
+
+for(i = 0; i < anos.length ; i++){
+    idade.push(2024 - anos[i])
+}
+
+console.log(idade)
+
+
+// Break 
+for(let i = 0; i < arthur.length ; i++){
+    if(typeof arthur[i] === 'number')break
+
+    console.log(arthur[i], typeof arthur[i])
+}
 
 
 

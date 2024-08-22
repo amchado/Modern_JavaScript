@@ -229,6 +229,31 @@ DADOS DO TESTE: Marks pesa 78 kg e tem 1,69 m de altura. John pesa 92 kg e tem 1
 //Desafio 12
 /* Há eleições em seu país! numa cidade pequena, há apenas 50 eleitores. Use um loop for para simular as 50 pessoas votando, registrando uma string como esta no console (para números de 1 a 50): 'O eleitor número 1 está votando no momento'. */
 
-for(let eleitor = 1; eleitor <= 50; eleitor++){
-    console.log(`O eleitor de número ${eleitor} está votando no momento`)
+// for(let eleitor = 1; eleitor <= 50; eleitor++){
+//     console.log(`O eleitor de número ${eleitor} está votando no momento`)
+// }
+
+
+
+
+
+
+
+//Desafio 13
+/* Vamos trazer de volta o array de populações de uma tarefa anterior.
+
+Use um loop for para calcular uma matriz chamada percents2 contendo as porcentagens da população mundial para os 4 valores da população. Use a função percentageWOrld1 que você criou anteriormente.
+
+Confirme se percents2 contém exatamente os mesmos valores que a matriz de percentagens que criamos manualmente na tarefa anterior e reflita sobre o quão melhor esta solução é. */
+
+const populacao = [0.215, 1.447, 1.441, 0.587]
+const porcentagem2 = []
+
+
+const Fporcentagem = function(pais){         return (pais / 7.900) * 100}
+
+for(i = 0; i < populacao.length; i++){
+    porcentagem2.push(Fporcentagem(populacao[i]))
 }
+
+console.log(porcentagem2)
