@@ -246,14 +246,49 @@ Use um loop for para calcular uma matriz chamada percents2 contendo as porcentag
 
 Confirme se percents2 contém exatamente os mesmos valores que a matriz de percentagens que criamos manualmente na tarefa anterior e reflita sobre o quão melhor esta solução é. */
 
-const populacao = [0.215, 1.447, 1.441, 0.587]
-const porcentagem2 = []
+// const populacao = [0.215, 1.447, 1.441, 0.587]
+// const porcentagem2 = []
 
 
-const Fporcentagem = function(pais){         return (pais / 7.900) * 100}
+// const Fporcentagem = function(pais){         return (pais / 7.900) * 100}
 
-for(i = 0; i < populacao.length; i++){
-    porcentagem2.push(Fporcentagem(populacao[i]))
+// for(i = 0; i < populacao.length; i++){
+//     porcentagem2.push(Fporcentagem(populacao[i]))
+// }
+
+// console.log(porcentagem2)
+
+
+
+
+
+//Desafio 14
+/* Armazene esse array de arrays em uma variável chamada listOfNeighbours:
+
+[['Canadá', 'México'], ['Espanha'], ['Noruega', 'Suécia', 'Rússia']];
+Registre apenas os países vizinhos no console, um por um, e não os arrays inteiros. Registre uma string como 'Vizinho: Canadá' para cada país.
+
+Você precisará de um loop dentro de outro loop para isso. Na verdade, isso é um pouco complicado, então não se preocupe se for muito difícil para você! Mas você ainda pode tentar descobrir isso de qualquer maneira 😉 */
+
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']]
+
+
+
+for( let i = 0 ; i <= listOfNeighbours.length - 1; i++ ){
+    for(let y = 0; y < listOfNeighbours[i].length; y++){
+        console.log(`Neighbour : ${listOfNeighbours[i][y]}`)
+    }
 }
 
-console.log(porcentagem2)
+
+
+
+
+
+
+
+for(i = 0 ; i < listOfNeighbours.length; i++){
+    for(y = 0; y < listOfNeighbours[i].length; y++ ){
+        console.log(`Neighbor: ${listOfNeighbours[i][y]}`)
+    }
+}
