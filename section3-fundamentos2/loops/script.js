@@ -1,8 +1,8 @@
-// Desafio 1
+//Desafio 1
 
-// /* Escreva uma função chamada descriptionCountry que aceita três parâmetros: país, população e capitalCity. Com base nesta entrada, a função retorna uma string com este formato: 'A Finlândia tem 6 milhões de habitantes e sua capital é Helsinque'.
+/* Escreva uma função chamada descriptionCountry que aceita três parâmetros: país, população e capitalCity. Com base nesta entrada, a função retorna uma string com este formato: 'A Finlândia tem 6 milhões de habitantes e sua capital é Helsinque'.
 
-// Chame esta função 3 vezes, com dados de entrada para 3 países diferentes. Armazene os valores retornados em 3 variáveis ​​diferentes e registre-os no console. */
+Chame esta função 3 vezes, com dados de entrada para 3 países diferentes. Armazene os valores retornados em 3 variáveis ​​diferentes e registre-os no console. */
 
 // function discricaoPais (pais, populacao, capital){
 //     const descricao = `A(O) ${pais} tem ${populacao} milhões de habitantes e sua capital é ${capital}
@@ -22,15 +22,15 @@
 
 
 
-// Desafio 2
+//Desafio 2
 
-// /* A população mundial é de 7.900 milhões de pessoas. Crie uma declaração de função chamada percentageOfWorld1 que recebe um valor populacional e retorna a porcentagem da população mundial que a população dada representa. Por exemplo, a China tem 1.441 milhões de pessoas, ou seja, cerca de 18,2% da população mundial.
+/* A população mundial é de 7.900 milhões de pessoas. Crie uma declaração de função chamada percentageOfWorld1 que recebe um valor populacional e retorna a porcentagem da população mundial que a população dada representa. Por exemplo, a China tem 1.441 milhões de pessoas, ou seja, cerca de 18,2% da população mundial.
 
-// Para calcular a porcentagem, divida o valor da população fornecido por 7.900 e depois multiplique por 100.
+Para calcular a porcentagem, divida o valor da população fornecido por 7.900 e depois multiplique por 100.
 
-// Chame percentOfWorld1 para 3 populações de países de sua escolha, armazene os resultados em variáveis ​​e registre-os no console.
+Chame percentOfWorld1 para 3 populações de países de sua escolha, armazene os resultados em variáveis ​​e registre-os no console.
 
-// Crie uma expressão de função que faça exatamente a mesma coisa, chamada percentageOfWolrd2, e também a chame com populações de 3 países (podem ser as mesmas populações). */
+Crie uma expressão de função que faça exatamente a mesma coisa, chamada percentageOfWolrd2, e também a chame com populações de 3 países (podem ser as mesmas populações). */
 
 // function porcentagemDoMundo(pais){
 //     return `A porcentagem é de ${(pais / 7.900) * 100}%`
@@ -57,7 +57,7 @@
 
 // Desafio 4
 
-// /* Recrie a última atribuição, mas desta vez crie uma função de seta chamada percentageOfWorld3. */
+/* Recrie a última atribuição, mas desta vez crie uma função de seta chamada percentageOfWorld3. */
 
 // const porcentagem = pais => `A porcentagem é de ${(pais / 7.900) * 100}`
 
@@ -71,12 +71,12 @@
 
 
 
-// Desafio 5
-// /* Crie uma função chamada descrevaPopulation. Use o tipo de função que você mais gosta. Esta função recebe dois argumentos: país e população, e retorna strings como esta: 'A China tem 1.441 milhões de pessoas, o que representa cerca de 18,2% do mundo'.
+//Desafio 5
+/* Crie uma função chamada descrevaPopulation. Use o tipo de função que você mais gosta. Esta função recebe dois argumentos: país e população, e retorna strings como esta: 'A China tem 1.441 milhões de pessoas, o que representa cerca de 18,2% do mundo'.
 
-// Para calcular a porcentagem, descriptionPopulation chama percentageOfWorld1 que você criou anteriormente.
+Para calcular a porcentagem, descriptionPopulation chama percentageOfWorld1 que você criou anteriormente.
 
-// Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
+Ligue para descriptionPopulation com dados de 3 países de sua escolha. */
 
 // const porcentagem = function(pais){
 //     return (pais / 7.900) * 100
@@ -94,8 +94,8 @@
 // const pais3 = descrevaPais('India', 1.447)
 // console.log(pais1, pais2, pais3)
 
-// Aula 6
-// Arrays
+//Aula 6
+//Arrays
 
 // const friends = ['Levy', 'Lipe', 'Lucas']
 
@@ -103,8 +103,8 @@
 
 // console.log(friends, anos )
 
-// Aula 8 
-// Objetos
+//Aula 8 
+//Objetos
 
 // const eu = {
 //     primeiroNome: 'Arthur',
@@ -129,7 +129,7 @@
 
 // console.log(`${eu.primeiroNome} tenho ${eu.amigos.length} amigos, mas o ${eu.amigos[0]} é o meu melhor amigo`)
 
-// Aula 10 
+//Aula 10 
 
 // const eu = {
 //     primeiroNome: 'Arthur',
@@ -171,6 +171,15 @@
 // console.log(eu.idade)
 
 // console.log(eu.getSummary())
+
+
+
+//Aula 11
+//Loops
+
+for(let rep = 1; rep <= 10; rep++){
+    console.log(`Você fez ${rep} repetições`)
+}
 
 
 
