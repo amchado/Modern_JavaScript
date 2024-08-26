@@ -67,18 +67,52 @@ DADOS DE TESTE: 125, 555 e 44. */
 
 
 
-function calcTip(bill){
-    return bill >= 50 && bill <=300 ? bill * 0.15 : bill * 0.20
-}
+// function calcTip(bill){
+//     return bill >= 50 && bill <=300 ? bill * 0.15 : bill * 0.20
+// }
     
-const bills = [125, 555, 44]
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+// const bills = [125, 555, 44]
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
 
-const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+// const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
 
-console.log(bills, tips, totals)
+// console.log(bills, tips, totals)
 
 
+
+
+
+
+//      Challenger 3
+
+/* Vamos melhorar ainda mais a calculadora de gorjetas do Steven, desta vez usando loops!
+
+Suas tarefas:
+
+Crie uma matriz chamada contas contendo todos os 10 valores de contas de teste.
+
+Crie matrizes vazias para as gorjetas e os totais (gorjetas e totais)
+
+Use a função calcTip que escrevemos antes (incluída no código inicial) para calcular gorjetas e valores totais (fatura + gorjeta) para cada valor de nota na matriz de contas. Use um loop for para realizar os 10 cálculos!
+
+
+
+DADOS DE TESTE: 22, 295, 176, 440, 37, 105, 10, 1100, 86 e 52.
+
+
+
+BÔNUS:
+
+Escreva uma função calcAverage que recebe um array chamado arr como argumento. Esta função calcula a média de todos os números no array fornecido. Este é um desafio DIFÍCIL (não fizemos isso antes)! Veja como resolver isso se você quiser:
+
+Primeiro, você precisará somar todos os valores do array. Para fazer a adição, comece criando uma soma variável que comece em 0. Em seguida, faça um loop sobre o array usando um loop for. Em cada iteração, adicione o valor atual à variável sum. Dessa forma, ao final do loop, você terá todos os valores somados.
+
+Para calcular a média, divida a soma calculada anteriormente pelo comprimento do array (porque esse é o número de elementos).
+
+Chame a função com o array de totais. 
+*/
+
+const bills = [ 22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
 
 
 
