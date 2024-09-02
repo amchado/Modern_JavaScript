@@ -57,8 +57,6 @@ document.querySelector('.check').addEventListener('click', function(){
 
 })
 
-//teste
-
 document.querySelector('.again').addEventListener('click', function(){
 
 
