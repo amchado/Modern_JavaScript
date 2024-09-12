@@ -13,6 +13,14 @@ const btnNew = document.querySelector('.btn--new')
 const btnRoll = document.querySelector('.btn--roll')
 const btnHold = document.querySelector('.btn--hold')
 
+const switchPlayer = function(){
+    document.getElementById(`current--${activePlayer}`).textContent = 0
+        currentScore = 0
+        activePlayer = activePlayer === 0 ? 1 : 0
+        player0El.classList.toggle('player--active')
+        player1El.classList.toggle('player--active')
+}
+
 
 //Start conditions
 const scores = [0, 0]
@@ -39,13 +47,24 @@ btnRoll.addEventListener('click', function(){
         currentScore += dice
         document.getElementById(`current--${activePlayer}`).textContent = currentScore
     }else{
-        document.getElementById(`current--${activePlayer}`).textContent = 0
-        currentScore = 0
-        activePlayer = activePlayer === 0 ? 1 : 0
-        player0El.classList.toggle('player--active')
-        player1El.classList.toggle('player--active')
+        switchPlayer()
     }
 
+
+})
+
+btnHold.addEventListener('click', function(){
+    //1. Add current score to activePlayer
+    scores[activePlayer] += currentScore
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]
+
+
+    //2. check if player score is >= 100
+
+    
+    //Finish the game
+
+    //Switch the player
 
 })
 
