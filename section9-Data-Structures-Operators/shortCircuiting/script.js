@@ -49,6 +49,16 @@ const restaurant = {
   },
 };
 
+//Nulish coalescing operator
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+//
+
 console.log('----OR-----');
 //Use any data type, return any data type, short-circuiting
 console.log(10 || 'jonas');
