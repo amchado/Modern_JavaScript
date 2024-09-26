@@ -245,7 +245,10 @@ console.log(hasExamplesInJava(books[0]));
 console.log(hasExamplesInJava(books[1]));
 
 //part2
-
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent &&
+    console.log(`${books[i].title}provides online content`);
+}
 /*
 //part1
 const [mainKeyword, ...rest] = books[0].keywords;
