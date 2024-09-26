@@ -226,6 +226,26 @@ const books = [
   ,
 ];
 
+//Solução com o mesmo resultado mas sem usar o shortCircuiting
+
+// const hasExamplesInJava = function (books) {
+//   if (books.programmingLanguage != 'Java') {
+//     console.log('No data available');
+//   } else {
+//     console.log('Java');
+//   }
+// };
+
+//part1
+const hasExamplesInJava = function (book) {
+  return book.programmingLanguage === 'Java' || 'no data available';
+};
+
+console.log(hasExamplesInJava(books[0]));
+console.log(hasExamplesInJava(books[1]));
+
+//part2
+
 /*
 //part1
 const [mainKeyword, ...rest] = books[0].keywords;
