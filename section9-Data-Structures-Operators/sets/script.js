@@ -1,0 +1,297 @@
+'use strict';
+
+// // Data needed for a later exercise
+// const flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// Data needed for first part of the section
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[1]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[2]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours,
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} to ${time}`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+
+  orderPizza: function (mainIngredient, ...othersIngredients) {
+    console.log(mainIngredient);
+    console.log(othersIngredients);
+  },
+};
+const orderSets = new Set([
+  'pizza',
+  'pizza',
+  'risotto',
+  'pizza',
+  'pasta',
+  'pasta',
+]);
+console.log(orderSets);
+
+console.log(new Set('Arthur'));
+
+//propriedades
+console.log(orderSets.size);
+console.log(orderSets.has('pizza'));
+console.log(orderSets.has('ervilha'));
+orderSets.add('Garlic bread');
+orderSets.delete('pasta');
+// orderSets.clear()
+console.log(orderSets);
+
+for (const order of orderSets) {
+  console.log(order);
+}
+
+//exemplo
+const staff = [
+  'jogador',
+  'tecnico',
+  'goleiro',
+  'goleiro',
+  'jogador',
+  'jogador',
+  'jogador',
+];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(
+  new Set(
+    'jogador',
+    'tecnico',
+    'goleiro',
+    'goleiro',
+    'jogador',
+    'jogador',
+    'jogador'
+  ).size
+);
+
+console.log(new Set('Arthur').size);
+/*
+//property names
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `we are open on ${properties.length} days:`;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+//property values
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entire objects
+const entires = Object.entries(openingHours);
+// console.log(entires);
+
+for (const [key, { open, close }] of entires) {
+  console.log(`On ${key}, we open at ${open} and close at ${close}`);
+}
+
+// console.log(restaurant.openingHours.mon.open);
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+//With optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours.tue?.open);
+
+for (const days of weekdays) {
+  const open = restaurant.openingHours[days]?.open ?? 'closed';
+  console.log(`${days}, open at ${open} hrs.`);
+}
+
+//Method
+
+console.log(restaurant.order?.(0, 1) ?? 'Method not exist');
+console.log(restaurant.ordersandwish?.(0, 1) ?? 'Method not exist');
+
+//Arrays
+const array1 = [{ name: 'Arthur', number: 25, school: 'Caic' }];
+
+console.log(array1[0]?.name ?? 'array empty');
+console.log(array1[1]?.name ?? 'array empty');
+
+
+console.log(restaurant);
+
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+console.log(menu);
+
+for (const item of menu) {
+  console.log(item);
+}
+
+for (const item of menu.entries()) {
+  console.log(item);
+}
+
+for (const [el, i] of menu.entries()) {
+  console.log(`${el + 1}: ${i}`);
+}
+// for (let i = 0; i < menu.length; i++) {
+//   console.log(menu[i]);
+// }
+
+
+//Nulish coalescing operator
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+//
+
+console.log('----OR-----');
+//Use any data type, return any data type, short-circuiting
+console.log(10 || 'jonas');
+console.log('' || 'jonas');
+console.log(undefined || null);
+
+console.log(null || undefined || '' || 0 || 'Arthur' || true || 10);
+
+// restaurant.numGuests = 20
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 15;
+console.log(guest2);
+
+console.log('----AND----');
+
+console.log('arthur' && 20);
+console.log(null && 20);
+
+console.log('arthur' && 20 && undefined && true && null);
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('calabresa', 'queijo');
+}
+
+restaurant.orderPizza &&
+  restaurant.orderPizza('portuguesa', 'bacon', 'azeitona');
+//DESTRUCTION
+
+// restaurant.orderPizza('calabresa', 'queijo', 'bacon', 'cebolas');
+
+// restaurant.orderPizza('Portuguesa');
+
+// //Spread because on Right side of =
+// const arr = [1, 2, ...[4, 5]];
+// console.log(arr);
+
+// //Rest beacause on Left side of =
+// const [first, second, ...others] = [1, 2, 3, 10, 12];
+// console.log(others);
+
+// const [pizza, , risoto, ...othersFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risoto, othersFood);
+
+// //Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(sat, weekdays);
+
+// //2) functions
+// const add = function (...numbers) {
+//   let sm = 0;
+//   for (let i = 0; i < numbers.length; i++) sm += numbers[i];
+//   console.log(sm);
+// };
+
+// add(2, 3);
+// add(3, 2, 10);
+// add(1, 2, 3, 4, 5, 6, 7);
+
+// const x = [2, 22, 12];
+// add(...x);
+// const arr = [5, 6, 7];
+// const newBadArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(newBadArr);
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+
+// //Copy array
+// const copyMenu = [...restaurant.mainMenu];
+
+// //join 2 arrays or more
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
+
+// //interables: arrays, strings, maps, sets. NOT functions
+// const str = 'Arthur';
+// const letters = [...str, '', 'R.'];
+// console.log(letters);
+// console.log(...str);
+
+// //Real-workd example
+// const ingredients = [
+//   //   prompt('Lets make pasta! Ingrediente 1?'),
+//   //   prompt('Ingredient 2?'),
+//   //   prompt('Ingredient 3?'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
+
+// //Objects
+// const newReustaurant = { founder: 'Arthur', ...restaurant, foundedIn: 1992 };
+// console.log(newReustaurant);
+
+// const reustaurantCopy = { ...restaurant };
+// reustaurantCopy.name = 'Pizaria Toscana';
+// console.log(reustaurantCopy.name);
+// console.log(restaurant.name);
+
+*/
