@@ -226,10 +226,45 @@ const books = [
 ];
 const bookCategories =
   'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+
+const logBookCategories = function (book) {
+  const str = book.split(';');
+  for (let categorys of str) {
+    console.log(categorys);
+  }
+};
+
 logBookCategories(bookCategories);
+//
+const getKeywordsAsString = function (books) {
+  const keywords = [];
 
-const logBookCategories = function (book) {};
+  for (const book of books) {
+    keywords.push(...book.keywords);
+  }
 
+  const uniqueKeywords = [...new Set(keywords)];
+
+  return uniqueKeywords.join(';');
+};
+
+console.log(getKeywordsAsString(books));
+
+//
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
+function logBookChapters(chapters) {
+  for (const [chapter, pages] of chapters) {
+    console.log(chapter.padEnd(20, '_') + ' ' + pages);
+  }
+}
+
+logBookChapters(bookChapters);
 /*
 //part1, não consegui chegar a conclusão
 
