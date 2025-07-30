@@ -108,5 +108,57 @@ const greet2 = greeting => name => console.log(`${greeting} ${name}`);
 
 const gretterOU = greet2('OU');
 
-gretterOU('Arthur');
-gretterOU('German');
+// gretterOU('Arthur');
+// gretterOU('German');
+
+/////////////
+//The call and apply Methods
+
+const lufthansa = {
+  airlane: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(passenNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airlane} flight ${this.iataCode}${passenNum}`
+    );
+    this.bookings.push({
+      flight: `${this.airlane} flight ${this.iataCode}${passenNum}`,
+      name,
+    });
+  },
+};
+
+// lufthansa.book(313, 'Arthur');
+// lufthansa.book(237, 'LC');
+// console.log(lufthansa);
+
+const eurowings = {
+  airlane: 'EuroWings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// nao funciona
+// book(23, 'hmmm');
+
+//Call method
+// book.call(eurowings, 213, 'Machado Florentino');
+// console.log(eurowings);
+
+const gol = {
+  airlane: 'Gol',
+  iataCode: 'GL',
+  bookings: [],
+};
+
+// book.call(gol, 712, 'Thallyah Machado');
+
+// Apply method
+const flightData = [583, 'George Cooper'];
+// book.apply(gol, flightData);
+// console.log(gol);
+
+// book.call(gol, ...flightData);
