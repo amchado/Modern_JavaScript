@@ -170,10 +170,10 @@ const bookEw = book.bind(eurowings);
 const bookLH = book.bind(lufthansa);
 const bookGL = book.bind(gol);
 
-bookEw(23, 'AL Machado');
+// bookEw(23, 'AL Machado');
 
 const bookEw23 = book.bind(eurowings, 23);
-bookEw23('DV Machado');
+// bookEw23('DV Machado');
 
 // Woth event listeners
 lufthansa.plane = 300;
@@ -183,12 +183,20 @@ lufthansa.buyPlane = function () {
   this.plane++;
   console.log(this.plane);
 };
-document
-  .querySelector('.buy')
-  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
 const addTAX = (rate, value) => value + value * rate;
-console.log(addTAX(0.1, 300));
+// console.log(addTAX(0.1, 300));
 
-const addVAX = addTAX.bind(null, 0.23);
+// const addVAX = addTAX.bind(null, 0.23);
 // (rate, value) => value + value * 0.23;
+
+//////////////////////////////
+// Immediately Invoked Function Expressions (IIFE)
+
+//IEFE
+(function () {
+  console.log(`Isso so vai ser exacutado uma vez`);
+})();
