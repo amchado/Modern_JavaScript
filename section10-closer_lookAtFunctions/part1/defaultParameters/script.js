@@ -200,3 +200,7 @@ const addTAX = (rate, value) => value + value * rate;
 (function () {
   console.log(`Isso so vai ser exacutado uma vez`);
 })();
+
+(() => {
+  console.log(`Isso tambem vai ser executado somente uma vez`);
+})();
