@@ -162,3 +162,27 @@ const flightData = [583, 'George Cooper'];
 // console.log(gol);
 
 // book.call(gol, ...flightData);
+
+//bind method
+//book.call(eurowings, 23, 'Sarah willians')
+
+const bookEw = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookGL = book.bind(gol);
+
+bookEw(23, 'AL Machado');
+
+const bookEw23 = book.bind(eurowings, 23);
+bookEw23('DV Machado');
+
+// Woth event listeners
+lufthansa.plane = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.plane++;
+  console.log(this.plane);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
