@@ -167,6 +167,7 @@ unique.forEach(function (value, i, map) {
 // Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
 // 1. Julia found out that the owners of the first and the last two dogs actually have cats, not dogs! So create a shallow copy of Julia's array, and remove the cat ges from that copied array (because it's a bad practice to mutate function parameters)
 
+////////// MINHA SOLUCAO
 const julia = [9, 16, 6, 8, 3];
 const juliaCorrect = julia.slice(0, -2);
 const kate = [10, 5, 6, 1, 4];
@@ -181,5 +182,19 @@ const checkDogs = function (dogsJulia, dogsKate) {
     }
   });
 };
-
 checkDogs(juliaCorrect, kate);
+
+const checkDogs2 = function (dogsJulia, dogsKate) {
+  const dogsJuliaCorrect = dogsJulia.slice();
+  dogsJuliaCorrect.splice(0, 1);
+  dogsJuliaCorrect.splice(-2);
+  const dogs = dogsJuliaCorrect.concat(dogsKate);
+  dogs.forEach(function (value, i) {
+    if (value >= 3) {
+      console.log(`Dog number ${i + 1} is an adult, and is ${value} years old`);
+    } else {
+      console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+    }
+  });
+};
+checkDogs2([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
