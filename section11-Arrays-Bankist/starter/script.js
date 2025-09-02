@@ -79,10 +79,30 @@ const displayMovements = function (movement) {
   });
 };
 displayMovements(account1.movements);
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+calcDisplayBalance(account1.movements);
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// LECTURES
 /////////////////////////////////////////////////
 /*
 //// Slice
@@ -161,7 +181,7 @@ const unique = new Set(['USD', 'ER', 'ER', 'BR', 'USD']);
 unique.forEach(function (value, i, map) {
   console.log(`${i}: ${value}`);
 });
-*/
+
 
 ///////// Coding Challenge #1
 // Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
@@ -198,3 +218,50 @@ const checkDogs2 = function (dogsJulia, dogsKate) {
   });
 };
 checkDogs2([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+
+const eurTousd = 1.1;
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const moveUSD = movements.map(function (move) {
+  return move * eurTousd;
+});
+
+console.log(movements);
+console.log(moveUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementsDescriptions);
+
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+///////////// Filter Method
+
+const deposits = movements.filter(function (move) {
+  return move > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const withdraws = movements.filter(function(mov) => mov < 0)
+console.log(withdraws);
+*/
+
+///////// reduce method
+
+//////////// acumulator ----> snowball
+const balance = movements.reduce(function (acc, cont, i, arr) {
+  // console.log(`Interaction ${i}: ${acc}`);
+  return acc + cont;
+}, 0);
+console.log(movements);
+console.log(balance);
