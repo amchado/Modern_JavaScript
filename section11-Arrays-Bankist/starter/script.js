@@ -164,3 +164,22 @@ unique.forEach(function (value, i, map) {
 */
 
 ///////// Coding Challenge #1
+// Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
+// 1. Julia found out that the owners of the first and the last two dogs actually have cats, not dogs! So create a shallow copy of Julia's array, and remove the cat ges from that copied array (because it's a bad practice to mutate function parameters)
+
+const julia = [9, 16, 6, 8, 3];
+const juliaCorrect = julia.slice(0, -2);
+const kate = [10, 5, 6, 1, 4];
+const arrBoth = juliaCorrect.concat(kate);
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  arrBoth.forEach(function (value, i) {
+    if (value >= 3) {
+      console.log(`Dog number ${i + 1} is an adult, and is ${value} years old`);
+    } else {
+      console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+    }
+  });
+};
+
+checkDogs(juliaCorrect, kate);
