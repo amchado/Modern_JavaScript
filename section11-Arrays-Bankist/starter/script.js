@@ -74,3 +74,44 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+/*
+//// Slice
+let arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2));
+console.log(arr.slice(1, -2));
+
+///// Splice
+arr.splice(-1);
+console.log(arr);
+arr.splice(1, 3);
+console.log(arr);
+
+////// Reverse
+arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+const arr2 = ['j', 'i', 'h', 'g'];
+console.log(arr2.reverse());
+console.log(arr2);
+
+/////Concat
+const letters = arr.concat(arr2);
+console.log(letters);
+
+////// Join
+console.log(letters.join(' - '));
+
+///////////////////////////////////////
+// The new at Method
+const arr = [23, 11, 64];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+// getting last array element
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+
+console.log('Arthur'.at(0));
+console.log('Arthur'.at(-1));
+*/
