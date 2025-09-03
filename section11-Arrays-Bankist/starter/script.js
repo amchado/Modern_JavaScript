@@ -86,6 +86,29 @@ const calcDisplayBalance = function (movements) {
 };
 calcDisplayBalance(account1.movements);
 
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, move) => acc + move);
+
+  labelSumIn.textContent = `${incomes}€`;
+
+  const outcome = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, move) => acc + move);
+
+  labelSumOut.textContent = `${Math.abs(outcome)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter(int => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
+
+  labelSumInterest.textContent = `${interest}€`;
+};
+calcDisplaySummary(account1.movements);
+
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -98,6 +121,12 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 console.log(accounts);
+
+///////// EVENT HANDLER
+btnLogin.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log('Login');
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -288,7 +317,7 @@ TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
 TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
-*/
+
 
 const calcAverageHumanAge = function (ages) {
   const humanAges = ages.map(function (age) {
@@ -315,3 +344,34 @@ const calcAverageHumanAge = function (ages) {
 };
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+
+///////////// PIPELINE
+// const a = movements
+//   .filter(mov => mov > 0)
+//   .map(convert => convert * 1.1)
+//   .reduce((at, acreci) => at + acreci, 0);
+// console.log(a);
+
+//////////////// CHALLENGER 3
+
+const calcAverageHumanAge2 = function (age) {
+  const humanages = age
+    .map(age => (age <= 2 ? 2 * 2 : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, ida, i, arr) => acc + ida / arr.length, 0);
+  return humanages;
+};
+
+const avg1 = calcAverageHumanAge2([5, 2, 4, 1, 15, 8, 3]);
+const avg2 = calcAverageHumanAge2([16, 6, 10, 5, 6, 1, 4]);
+
+console.log(`${avg1} |||||||| ${avg2}`);
+
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(firstWithdrawal);
+
+const account = accounts.find(acc => acc.username === 'jd');
+console.log(account);
+*/
