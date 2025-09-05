@@ -648,7 +648,6 @@ movements.sort((a, b) => {
 });
 // movements.sort((a, b) => b - a);
 console.log(movements);
-*/
 
 ///////////////////////////////////////
 // Array Grouping
@@ -672,3 +671,13 @@ console.log(groupedByActivity);
 
 const agroupdCounts = Object.groupBy(accounts, account => account.type);
 console.log(agroupdCounts);
+*/
+
+const x = Array.from({ length: 33 }, (att, i) => i + 1);
+console.log(x);
+
+const dice = Array.from(
+  { length: 100 },
+  (c, i) => (i = Math.trunc(Math.random() * 100))
+);
+console.log(dice);
