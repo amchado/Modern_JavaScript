@@ -681,7 +681,7 @@ const dice = Array.from(
   (c, i) => (i = Math.trunc(Math.random() * 100))
 );
 console.log(dice);
-*/
+
 
 ///////////////////////////////////////
 // Non-Destructive Alternatives: toReversed, toSorted, toSpliced, with
@@ -697,3 +697,4 @@ const newMovements = movements.with(1, 2000);
 console.log(newMovements);
 
 console.log(movements);
+*/
