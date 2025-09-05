@@ -671,7 +671,7 @@ console.log(groupedByActivity);
 
 const agroupdCounts = Object.groupBy(accounts, account => account.type);
 console.log(agroupdCounts);
-*/
+
 
 const x = Array.from({ length: 33 }, (att, i) => i + 1);
 console.log(x);
@@ -681,3 +681,19 @@ const dice = Array.from(
   (c, i) => (i = Math.trunc(Math.random() * 100))
 );
 console.log(dice);
+*/
+
+///////////////////////////////////////
+// Non-Destructive Alternatives: toReversed, toSorted, toSpliced, with
+
+console.log(movements);
+const reversedMov = movements.toReversed();
+console.log(reversedMov);
+
+// toSorted (sort), toSpliced (splice)
+
+// movements[1] = 2000;
+const newMovements = movements.with(1, 2000);
+console.log(newMovements);
+
+console.log(movements);
