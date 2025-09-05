@@ -525,7 +525,7 @@ YOUR TASKS:
 BONUS: What's the average weight of the heaviest breed that likes to fetch? HINT: Use the "Math.max" method along with the ... operator.
 
 TEST DATA:
-*/
+
 
 const breeds = [
   {
@@ -607,3 +607,30 @@ console.log(breeds.every(breed => breed.averageWeight > 10));
 
 // 7.
 console.log(breeds.some(breed => breed.activities.length >= 3));
+*/
+
+/////////////// Sorting Arrays
+
+//Strings
+const owners = ['Lucas', 'Davi', 'Jonas', 'Cassio'];
+console.log(owners.sort());
+// console.log(owners);
+
+////Numbers
+console.log(movements);
+
+//Ascendencing
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+// movements.sort((a, b) => a - b);
+console.log(movements);
+
+//Descending
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+// movements.sort((a, b) => b - a);
+console.log(movements);
