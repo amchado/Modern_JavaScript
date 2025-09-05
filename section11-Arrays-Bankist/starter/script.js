@@ -61,10 +61,12 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movement) {
+const displayMovements = function (movement, sorts = false) {
   containerMovements.innerHTML = ' ';
 
-  movement.forEach(function (move, i) {
+  const movs = sorts ? movement.slice().sort((a, b) => a - b) : movement;
+
+  movs.forEach(function (move, i) {
     const type = move > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
@@ -211,6 +213,14 @@ btnClose.addEventListener('click', function (e) {
     containerApp.style.opacity = 0;
   }
   inputCloseUsername.value = inputClosePin.value = '';
+});
+
+let sorted = false;
+
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
@@ -607,7 +617,7 @@ console.log(breeds.every(breed => breed.averageWeight > 10));
 
 // 7.
 console.log(breeds.some(breed => breed.activities.length >= 3));
-*/
+
 
 /////////////// Sorting Arrays
 
@@ -634,3 +644,4 @@ movements.sort((a, b) => {
 });
 // movements.sort((a, b) => b - a);
 console.log(movements);
+*/
