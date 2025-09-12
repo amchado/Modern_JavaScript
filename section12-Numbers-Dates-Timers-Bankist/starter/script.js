@@ -363,7 +363,7 @@ labelBalance.addEventListener('click', function () {
     if (i % 3 === 0) row.style.backgroundColor = 'blue';
   });
 });
-*/
+
 ///////////////////////////////////////
 // Numeric Separators
 
@@ -382,3 +382,4 @@ console.log(PI);
 
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
+*/
