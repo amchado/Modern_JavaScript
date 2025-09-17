@@ -382,7 +382,7 @@ console.log(PI);
 
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
-*/
+
 
 ///////////////////////////////////////
 // Working with BigInt
@@ -416,3 +416,12 @@ console.log(huge + ' is REALLY big!!!');
 // Divisions
 console.log(11n / 3n);
 console.log(10 / 3);
+*/
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date('August 2, 2002'));
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2008, 7, 18, 22, 18, 8));
