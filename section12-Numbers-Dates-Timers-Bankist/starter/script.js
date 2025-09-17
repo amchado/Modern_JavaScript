@@ -90,12 +90,10 @@ const formatMovementDate = function (date) {
   if (daysPassed === 0) return 'Today ';
   if (daysPassed === 1) return 'Yesterday ';
   if (daysPassed < 7) return `${daysPassed} days ago`;
-  else {
-    const day = `${date.getDate()}`.padStart(2, '0');
-    const year = date.getFullYear();
-    const mounth = `${date.getMonth() + 1}`.padStart(2, '0');
-    return `${day}/${mounth}/${year}`;
-  }
+  const day = `${date.getDate()}`.padStart(2, '0');
+  const year = date.getFullYear();
+  const mounth = `${date.getMonth() + 1}`.padStart(2, '0');
+  return `${day}/${mounth}/${year}`;
 };
 
 const displayMovements = function (acc, sort = false) {
