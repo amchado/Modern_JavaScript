@@ -562,7 +562,7 @@ console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language, options).format(num)
 );
-*/
+
 ///////////////////////////////////////
 // Timers
 
@@ -591,3 +591,4 @@ setInterval(function () {
   const sec = now.getSeconds();
   console.log(`${hrs}:${min}:${sec}`);
 }, 1000);
+*/
