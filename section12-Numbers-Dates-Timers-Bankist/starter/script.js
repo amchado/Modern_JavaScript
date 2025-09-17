@@ -576,3 +576,18 @@ const pizzaTimer = setTimeout(
 console.log('Waiting...');
 
 if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+///setInterval
+// setInterval(function () {
+//   const now = new Date();
+//   const hrs =
+//   console.log(now);
+// }, 1000);
+
+setInterval(function () {
+  const now = new Date();
+  const hrs = now.getHours();
+  const min = now.getMinutes();
+  const sec = now.getSeconds();
+  console.log(`${hrs}:${min}:${sec}`);
+}, 1000);
