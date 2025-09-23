@@ -109,17 +109,26 @@ const formatCur = function (value, locale, currency) {
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
-  const movs = sort
-    ? acc.movements.slice().sort((a, b) => a - b)
-    : acc.movements;
+  const combineMovsDates = acc.movements.map((mov, i) => ({
+    movement: mov,
+    MovDate: acc.movementsDates.at([i]),
+  }));
+  console.log(combineMovsDates);
 
-  movs.forEach(function (mov, i) {
-    const type = mov > 0 ? 'deposit' : 'withdrawal';
+  if (sort) combineMovsDates.sort((a, b) => a.movement - b.movement);
 
-    const date = new Date(acc.movementsDates[i]);
+  // const movs = sort
+  //   ? acc.movements.slice().sort((a, b) => a - b)
+  //   : acc.movements;
+
+  combineMovsDates.forEach(function (obj, i) {
+    const { movement, MovDate } = obj;
+    const type = movement > 0 ? 'deposit' : 'withdrawal';
+
+    const date = new Date(MovDate);
     const displayDate = formatMovementDate(date, acc.locale);
 
-    const formateddMov = formatCur(mov, acc.locale, acc.currency);
+    const formateddMov = formatCur(movement, acc.locale, acc.currency);
 
     // new Intl.NumberFormat(acc.locale, {
     //   style: 'currency',
