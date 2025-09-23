@@ -208,16 +208,17 @@ const startLogOutTimer = function () {
     time--;
   };
   //set time to 5 minuts
-  let time = 15;
+  let time = 300;
 
   //Call the timer every secod
   tick();
   const timer = setInterval(tick, 1000);
+  return timer;
 };
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
 // ////////Faked login
 // currentAccount = account1;
@@ -269,7 +270,8 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginPin.blur();
 
     //setTIMER
-    startLogOutTimer();
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
 
     // Update UI
     updateUI(currentAccount);
@@ -300,6 +302,10 @@ btnTransfer.addEventListener('click', function (e) {
 
     // Update UI
     updateUI(currentAccount);
+
+    //reset timer
+    clearInterval(timer);
+    timer = startLogOutTimer();
   }
 });
 
@@ -325,6 +331,9 @@ btnLoan.addEventListener('click', function (e) {
     }, 2500);
   }
   inputLoanAmount.value = '';
+
+  clearInterval(timer);
+  timer = startLogOutTimer();
 });
 
 btnClose.addEventListener('click', function (e) {
