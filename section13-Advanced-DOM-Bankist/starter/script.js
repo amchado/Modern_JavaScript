@@ -32,3 +32,19 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+////////////////////////////////////////////////
+const headar = document.querySelector('.header');
+
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML =
+  'Nos usamos cookies para o melhor funcionamento do site <button class="btn btn--close--cookie">Aceito!</button>';
+
+headar.append(message);
+
+const botaoCookie = document.querySelector('.btn--close--cookie');
+
+botaoCookie.addEventListener('click', function () {
+  message.remove();
+});
