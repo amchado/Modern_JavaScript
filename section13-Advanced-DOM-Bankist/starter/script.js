@@ -33,8 +33,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-/*
-////////////////////////////////////////////////
+//// botao Cookies
 const headar = document.querySelector('.header');
 
 const message = document.createElement('div');
@@ -49,8 +48,21 @@ const botaoCookie = document.querySelector('.btn--close--cookie');
 botaoCookie.addEventListener('click', function () {
   message.remove();
 });
-*/
 
+///////// STYLE
+message.style.backgroundColor = '#37383d';
+message.style.width = '103.75%';
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+console.log(getComputedStyle(message).height);
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+//////////////////////////////////////////
 /*
 // Selecting, Creating, and Deleting Elements
 
