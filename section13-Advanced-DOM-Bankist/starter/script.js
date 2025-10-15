@@ -166,3 +166,17 @@ document
     message.parentElement.removeChild(message);
   });
 */
+
+const h1 = document.querySelector('h1');
+
+const alerth1 = function (e) {
+  alert('AddEventListener : Great, you are reading a h1 ');
+
+  // h1.removeEventListener('mouseenter', alerth1);
+};
+
+h1.addEventListener('mouseenter', alerth1);
+
+setTimeout(() => {
+  h1.removeEventListener('mouseenter', alerth1);
+}, 3000);
