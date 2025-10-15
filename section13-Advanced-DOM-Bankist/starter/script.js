@@ -165,7 +165,7 @@ document
     // message.remove();
     message.parentElement.removeChild(message);
   });
-*/
+
 
 const h1 = document.querySelector('h1');
 
@@ -176,7 +176,30 @@ const alerth1 = function (e) {
 };
 
 h1.addEventListener('mouseenter', alerth1);
+*/
 
-setTimeout(() => {
-  h1.removeEventListener('mouseenter', alerth1);
-}, 3000);
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 256)},${randomInt(0, 256)},${randomInt(0, 256)})`;
+
+// const link = document.querySelector('.nav__link');
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propagation
+  // e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+});
