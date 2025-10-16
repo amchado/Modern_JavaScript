@@ -185,11 +185,12 @@ headerObserver.observe(header);
 const allSections = document.querySelectorAll('.section');
 
 const revelSection = function (entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) return;
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  entry.target.classList.remove('section--hidden');
-  observer.unobserve(entry.target);
+    entry.target.classList.remove('section--hidden');
+    observer.unobserve(entry.target);
+  });
 };
 
 const sectionObserver = new IntersectionObserver(revelSection, {
