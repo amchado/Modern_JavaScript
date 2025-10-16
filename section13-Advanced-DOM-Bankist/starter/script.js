@@ -148,19 +148,39 @@ window.addEventListener('scroll', function (e) {
 */
 
 // sticky navigation: intersection observer API ↑↑↑↑
-const ObsCallback = function (entries, observer) {
-  entries.forEach(entry => {
-    console.log(entry);
-  });
+// const ObsCallback = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
+
+// const ObsOptions = {
+//   root: null,
+//   threshold: [0, 0.24],
+// };
+
+// const observer = new IntersectionObserver(ObsCallback, ObsOptions);
+// observer.observe(section1);
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
 };
 
-const ObsOptions = {
+const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
-  threshold: [0, 0.24],
-};
-
-const observer = new IntersectionObserver(ObsCallback, ObsOptions);
-observer.observe(section1);
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+headerObserver.observe(header);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// botao Cookies
