@@ -115,6 +115,8 @@ tabsContainer.addEventListener('click', function (e) {
 
 /////Menu fade animation
 
+// Metodo não recomendado ↓↓
+/*                                           
 const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
@@ -143,6 +145,22 @@ window.addEventListener('scroll', function (e) {
     nav.classList.remove('sticky');
   }
 });
+*/
+
+// sticky navigation: intersection observer API ↑↑↑↑
+const ObsCallback = function (entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  });
+};
+
+const ObsOptions = {
+  root: null,
+  threshold: [0, 0.24],
+};
+
+const observer = new IntersectionObserver(ObsCallback, ObsOptions);
+observer.observe(section1);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// botao Cookies
