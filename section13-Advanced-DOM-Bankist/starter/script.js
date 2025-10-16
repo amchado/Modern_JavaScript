@@ -115,7 +115,7 @@ tabsContainer.addEventListener('click', function (e) {
 
 /////Menu fade animation
 
-const handleHover = function (e, opacity) {
+const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
@@ -123,20 +123,16 @@ const handleHover = function (e, opacity) {
 
     siblings.forEach(el => {
       if (el !== link) {
-        el.style.opacity = opacity;
+        el.style.opacity = this;
       }
-      logo.style.opacity = opacity;
+      logo.style.opacity = this;
     });
   }
 };
 
-nav.addEventListener('mouseover', function (e) {
-  handleHover(e, 0.5);
-});
+nav.addEventListener('mouseover', handleHover.bind(0.5));
 
-nav.addEventListener('mouseout', function (e) {
-  handleHover(e, 1.0);
-});
+nav.addEventListener('mouseout', handleHover.bind(1));
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// botao Cookies
